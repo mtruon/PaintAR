@@ -1,2 +1,3 @@
-# AR_4900
+# ProjectAR
+
 An iOS ARKit Application for CIS 4900
