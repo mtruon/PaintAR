@@ -50,13 +50,17 @@ class ViewController: UIViewController {
     
     // On touch, create an oil painting at that location
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
+       
+        // If touches.count == 2, then user is trying to rotate object
+        guard touches.count == 1 else {
             return
         }
         
-        guard let hitResult = sceneView.hitTest(
-            touch.location(in: sceneView),
-            types: .featurePoint).first else {
+        guard let touch = touches.first?.location(in: sceneView) else {
+            return
+        }
+
+        guard let hitResult = sceneView.hitTest(touch, types: .featurePoint).first else {
                 return
         }
         
@@ -72,8 +76,6 @@ class ViewController: UIViewController {
         oilPaintingNode?.position = position
         sceneView.scene.rootNode.addChildNode(oilPaintingNode!)
     }
-    
-    
 }
 
 // MARK: - ARSCNViewDelegate
@@ -88,6 +90,14 @@ extension ViewController: ARSCNViewDelegate {
      return node
      }
      */
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {
+            return
+        }
+        
+        print("Found Plane: \(planeAnchor)")
+    }
 }
 
 
