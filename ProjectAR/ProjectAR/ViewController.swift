@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var plusButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,14 @@ class ViewController: UIViewController {
         oilPaintingNode?.scale = .init(0.1, 0.1, 0.1)
         oilPaintingNode?.position = position
         sceneView.scene.rootNode.addChildNode(oilPaintingNode!)
+    }
+    
+    @IBAction func plusButtonTapped(_ sender: UIButton) {
+        
+        // remove all objects
+        sceneView.scene.rootNode.enumerateChildNodes { (node,_) in
+            node.removeFromParentNode()
+        }
     }
 }
 
