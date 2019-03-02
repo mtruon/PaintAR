@@ -100,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8A60A82208AFCB003D017B /* AppDelegate.swift */,
-				9B8A60DE2208B4BA003D017B /* Scenes */,
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9B8A60AA2208AFCB003D017B /* art.scnassets */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
@@ -126,13 +125,6 @@
 				9B8A60CC2208AFCC003D017B /* Info.plist */,
 			);
 			path = ProjectARUITests;
-			sourceTree = "<group>";
-		};
-		9B8A60DE2208B4BA003D017B /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 		9B8A60DF2208B4E4003D017B /* Storyboards */ = {
@@ -453,13 +445,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZGGZY43P22;
+				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = school.ProjectAR;
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Michael";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,13 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZGGZY43P22;
+				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = school.ProjectAR;
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Michael";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
