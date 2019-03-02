@@ -10,9 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var plusButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
+        let scene = SCNScene()
+
         // Set the scene to the view
         sceneView.scene = scene
     }
@@ -35,6 +36,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .vertical
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -47,6 +49,48 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    // On touch, create an oil painting at that location
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+       
+        // If touches.count == 2, then user is trying to rotate object
+        guard touches.count == 1 else {
+            return
+        }
+        
+        guard let touch = touches.first?.location(in: sceneView) else {
+            return
+        }
+
+        guard let hitResult = sceneView.hitTest(touch, types: .featurePoint).first else {
+                return
+        }
+        
+        let position = SCNVector3Make(
+            hitResult.worldTransform.columns.3.x,
+            hitResult.worldTransform.columns.3.y,
+            hitResult.worldTransform.columns.3.z)
+        
+        let newScene = SCNScene(named: "art.scnassets/oilPainting.scn")!
+        let oilPaintingNode = newScene.rootNode.childNode(withName: "oilPainting", recursively: true)
+        
+        oilPaintingNode?.scale = .init(0.1, 0.1, 0.1)
+        oilPaintingNode?.position = position
+        sceneView.scene.rootNode.addChildNode(oilPaintingNode!)
+    }
+    
+    @IBAction func plusButtonTapped(_ sender: UIButton) {
+        
+        // remove all objects
+        sceneView.scene.rootNode.enumerateChildNodes { (node,_) in
+            node.removeFromParentNode()
+        }
+    }
+}
+
+// MARK: - ARSCNViewDelegate
+
+extension ViewController: ARSCNViewDelegate {
+    
     /*
      // Override to create and configure nodes for anchors added to the view's session.
      func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
@@ -55,11 +99,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
      return node
      }
      */
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {
+            return
+        }
+        
+        print("Found Plane: \(planeAnchor)")
+    }
 }
-
-// MARK: - ARSCNViewDelegate
-
-    // TODO: Add ARSCNViewDelegate here
 
 
 // MARK: - ARSKViewDelegate
