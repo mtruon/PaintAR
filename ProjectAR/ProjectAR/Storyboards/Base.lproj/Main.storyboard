@@ -24,6 +24,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-yg-yj5">
                                 <rect key="frame" x="183" y="603" width="48" height="48"/>
                                 <state key="normal" image="add"/>
+                                <state key="selected" image="addPressed"/>
                                 <connections>
                                     <action selector="plusButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rlz-1b-kgA"/>
                                 </connections>
@@ -52,5 +53,6 @@
     </scenes>
     <resources>
         <image name="add" width="48" height="48"/>
+        <image name="addPressed" width="48" height="48"/>
     </resources>
 </document>

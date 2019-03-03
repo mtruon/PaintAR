@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */; };
 		9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60A82208AFCB003D017B /* AppDelegate.swift */; };
 		9B8A60AB2208AFCB003D017B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A60AA2208AFCB003D017B /* art.scnassets */; };
 		9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60AC2208AFCB003D017B /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		9B8A60A52208AFCA003D017B /* ProjectAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8A60A82208AFCB003D017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8A60AA2208AFCB003D017B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9B8A60AA2208AFCB003D017B /* art.scnassets */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
+				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
 				9B8A60B12208AFCC003D017B /* Assets.xcassets */,
 				9B8A60B62208AFCC003D017B /* Info.plist */,
 			);
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
 				9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */,
 			);
