@@ -16,12 +16,26 @@ extension ViewController: ARSCNViewDelegate {
         // Create an object based on the size of the plane detected
         let geometry = SCNPlane(width: CGFloat(planeAnchor.extent.x),
                                 height: CGFloat(planeAnchor.extent.z))
-        geometry.firstMaterial?.diffuse.contents = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.25)
-        node.geometry = geometry
+//        geometry.firstMaterial?.diffuse.contents = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.25)
         
+        node.geometry = geometry
+        node.opacity = 0.8
+        let changeColorLow = SCNAction.customAction(duration: 3) { (node, elapsedTime) -> () in
+            let percentage = (elapsedTime / 3) * 0.5
+//            node.opacity = 0.8 - percentage
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8 - percentage)
+            node.geometry!.firstMaterial!.diffuse.contents = color
+        }
+        let changeColorHigh = SCNAction.customAction(duration: 3) { (node, elapsedTime) -> () in
+            let percentage = (elapsedTime / 3) * 0.5
+//            node.opacity = 0.3 + percentage
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3 + percentage)
+            node.geometry!.firstMaterial!.diffuse.contents = color
+        }
+        let changeColor = SCNAction.repeatForever(SCNAction.sequence([changeColorLow, changeColorHigh]))
+        node.runAction(changeColor)
         node.eulerAngles.x = -Float.pi / 2
         node.opacity = 1
-        
         return node
     }
     
