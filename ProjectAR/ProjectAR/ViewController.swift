@@ -21,14 +21,18 @@ class ViewController: UIViewController {
         // Set the view's delegate
         sceneView.delegate = self
         
+        // Set up scene content
+        setupCamera()
+        
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        sceneView.debugOptions = [.showFeaturePoints]
         
-        // Create a new scene
-        let scene = SCNScene()
-
-        // Set the scene to the view
-        sceneView.scene = scene
+//        // Create a new scene
+//        let scene = SCNScene()
+//
+//        // Set the scene to the view
+//        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +53,36 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
     
+    func setupCamera() {
+        guard let camera = sceneView.pointOfView?.camera else {
+            fatalError("Expected a valid `pointOfView` from the scene.")
+        }
+        
+        /*
+         Enable HDR camera settings for the most realistic appearance
+         with environmental lighting and physically based materials.
+         */
+        camera.wantsHDR = true
+        camera.exposureOffset = -1
+        camera.minimumExposure = -1
+        camera.maximumExposure = 3
+    }
+    
+    private func addPainting(called paintingName: String, at paintingAddress: String,using result: ARHitTestResult) {
+        let oilScene = SCNScene(named: paintingAddress)
+        guard let oilPaintingNode = oilScene?.rootNode.childNode(withName: paintingName, recursively: true) else {
+            return
+        }
+        
+        // Place the node at the user's touch
+        let planePosition = result.worldTransform.columns.3
+        
+        oilPaintingNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        oilPaintingNode.position = SCNVector3(planePosition.x, planePosition.y, planePosition.z)
+        sceneView.scene.rootNode.addChildNode(oilPaintingNode)
+    }
+    
+    // MARK: Plus button actions
     // On touch, create an oil painting at that location
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
        
@@ -57,25 +91,15 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let touch = touches.first?.location(in: sceneView) else {
+        guard let touchLocation = touches.first?.location(in: sceneView) else {
             return
         }
-
-        guard let hitResult = sceneView.hitTest(touch, types: .featurePoint).first else {
-                return
+        
+        
+        let hitTestResult = sceneView.hitTest(touchLocation, types: [.existingPlaneUsingExtent])
+        if let result = hitTestResult.first {
+            addPainting(called: "oilPainting", at: "art.scnassets/oilPainting.scn", using: result)
         }
-        
-        let position = SCNVector3Make(
-            hitResult.worldTransform.columns.3.x,
-            hitResult.worldTransform.columns.3.y,
-            hitResult.worldTransform.columns.3.z)
-        
-        let newScene = SCNScene(named: "art.scnassets/oilPainting.scn")!
-        let oilPaintingNode = newScene.rootNode.childNode(withName: "oilPainting", recursively: true)
-        
-        oilPaintingNode?.scale = .init(0.1, 0.1, 0.1)
-        oilPaintingNode?.position = position
-        sceneView.scene.rootNode.addChildNode(oilPaintingNode!)
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
@@ -86,31 +110,6 @@ class ViewController: UIViewController {
         }
     }
 }
-
-// MARK: - ARSCNViewDelegate
-
-extension ViewController: ARSCNViewDelegate {
-    
-    /*
-     // Override to create and configure nodes for anchors added to the view's session.
-     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-     let node = SCNNode()
-     
-     return node
-     }
-     */
-    
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {
-            return
-        }
-        
-        print("Found Plane: \(planeAnchor)")
-    }
-}
-
-
-// MARK: - ARSKViewDelegate
 
 extension ViewController: ARSKViewDelegate {
         
