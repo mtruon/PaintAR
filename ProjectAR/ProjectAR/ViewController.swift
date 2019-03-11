@@ -68,18 +68,41 @@ class ViewController: UIViewController {
         camera.maximumExposure = 3
     }
     
-    private func addPainting(called paintingName: String, at paintingAddress: String,using result: ARHitTestResult) {
-        let oilScene = SCNScene(named: paintingAddress)
-        guard let oilPaintingNode = oilScene?.rootNode.childNode(withName: paintingName, recursively: true) else {
+//    private func addPainting(called paintingName: String, at paintingAddress: String,using result: ARHitTestResult) {
+//        let oilScene = SCNScene(named: paintingAddress)
+//        guard let oilPaintingNode = oilScene?.rootNode.childNode(withName: paintingName, recursively: true) else {
+//            return
+//        }
+//
+//        // Place the node at the user's touch
+//        let planePosition = result.worldTransform.columns.3
+//
+//        oilPaintingNode.scale = SCNVector3(0.1, 0.1, 0.1)
+//        oilPaintingNode.position = SCNVector3(planePosition.x, planePosition.y, planePosition.z)
+//        sceneView.scene.rootNode.addChildNode(oilPaintingNode)
+//    }
+    
+    private func createPainting(with image: UIImage, using result: ARHitTestResult) {
+        
+        // Retrieve frame scene
+        let frameScene = SCNScene(named: "models.scnassets/Painting/painting.scn")
+        guard let frameNode = frameScene?.rootNode.childNode(withName: "Painting", recursively: false) else {
             return
         }
         
-        // Place the node at the user's touch
-        let planePosition = result.worldTransform.columns.3
+        // Retrieve painting node from frame scene hierarchy
+        guard let paintingNode = frameScene?.rootNode.childNode(withName: "PaintedImage", recursively: true) else {
+            return
+        }
+        paintingNode.geometry?.firstMaterial?.diffuse.contents = image
         
-        oilPaintingNode.scale = SCNVector3(0.1, 0.1, 0.1)
-        oilPaintingNode.position = SCNVector3(planePosition.x, planePosition.y, planePosition.z)
-        sceneView.scene.rootNode.addChildNode(oilPaintingNode)
+        // Place the frame at the user's touch location
+        let planePosition = result.worldTransform.columns.3
+        frameNode.position = SCNVector3(planePosition.x, planePosition.y, planePosition.z)
+        
+        // Add frame node to the scene
+        
+        sceneView.scene.rootNode.addChildNode(frameNode)
     }
     
     // MARK: Plus button actions
@@ -97,8 +120,9 @@ class ViewController: UIViewController {
         
         
         let hitTestResult = sceneView.hitTest(touchLocation, types: [.existingPlaneUsingExtent])
-        if let result = hitTestResult.first {
-            addPainting(called: "oilPainting", at: "art.scnassets/oilPainting.scn", using: result)
+        if let result = hitTestResult.first,
+            let image = UIImage(named: "models.scnassets/Painting/textures/jmb-cabeza.jpg") {
+                createPainting(with: image, using: result)
         }
     }
     
