@@ -10,7 +10,7 @@ import Foundation
 import ARKit
 
 class VirtualObjectLoader {
-    public private(set) var loadedObjects = [VirtualObject]()
+    private(set) var loadedObjects = [VirtualObject]()
     
     // Loads the virtual object's scene from the reference node
     func loadVirtualObject(_ object: VirtualObject) {
