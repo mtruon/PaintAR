@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
-        
+        // TODO: Implement object modal
 //        // remove all objects
 //        sceneView.scene.rootNode.enumerateChildNodes { (node,_) in
 //            node.removeFromParentNode()
