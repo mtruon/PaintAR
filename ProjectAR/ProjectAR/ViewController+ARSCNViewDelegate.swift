@@ -6,7 +6,9 @@
 //  Copyright © 2019 Kushal Pandya. All rights reserved.
 //
 
+import Foundation
 import ARKit
+import SceneKit
 
 extension ViewController: ARSCNViewDelegate {
     // MARK: ARSCNViewDelegate
@@ -17,6 +19,7 @@ extension ViewController: ARSCNViewDelegate {
         let geometry = SCNPlane(width: CGFloat(planeAnchor.extent.x),
                                 height: CGFloat(planeAnchor.extent.z))
         
+        // Animation
         node.geometry = geometry
         node.opacity = 0.8
         let changeColorLow = SCNAction.customAction(duration: 3) { (node, elapsedTime) -> () in
@@ -35,16 +38,13 @@ extension ViewController: ARSCNViewDelegate {
         node.runAction(changeColor)
         
         node.eulerAngles.x = -Float.pi / 2
-        node.opacity = 1
         return node
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         // Ensures that we received a vertical plane
-        guard let planeAnchor = anchor as? ARPlaneAnchor, planeAnchor.alignment == .vertical else {
-            return
-        }
+        guard let planeAnchor = anchor as? ARPlaneAnchor, planeAnchor.alignment == .vertical else { return }
         
         let wall = createWall(for: planeAnchor)
         node.addChildNode(wall)
@@ -62,7 +62,6 @@ extension ViewController: ARSCNViewDelegate {
                 plane.width = CGFloat(planeAnchor.extent.x)
                 plane.height = CGFloat(planeAnchor.extent.z)
             }
-            
         }
     }
     
