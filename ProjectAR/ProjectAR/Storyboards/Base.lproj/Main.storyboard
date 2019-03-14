@@ -22,21 +22,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-yg-yj5">
-                                <rect key="frame" x="183" y="603" width="48" height="48"/>
+                                <rect key="frame" x="183" y="633" width="48" height="48"/>
                                 <state key="normal" image="add"/>
                                 <state key="selected" image="addPressed"/>
                                 <connections>
                                     <action selector="plusButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rlz-1b-kgA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-eL-OOd" userLabel="Reset Button">
+                                <rect key="frame" x="369" y="35" width="30" height="30"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uos-cH-CI0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="vaM-yg-yj5" secondAttribute="bottom" constant="85" id="DX5-hu-M1q"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="vaM-yg-yj5" secondAttribute="bottom" constant="55" id="DX5-hu-M1q"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="vaM-yg-yj5" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="Sn8-rG-eC5"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstItem="8wf-eL-OOd" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="15" id="Vwb-Uw-7UY"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="8wf-eL-OOd" secondAttribute="trailing" constant="15" id="q60-C1-35L"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>

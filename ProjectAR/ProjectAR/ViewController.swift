@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     // Loads virtual objects
     let virtualObjectLoader = VirtualObjectLoader()
     
+    var isRestartAvailable = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +77,8 @@ class ViewController: UIViewController {
         camera.maximumExposure = 3
     }
     
-    // MARK: Plus button actions
-    // On touch, create an oil painting at that location
+    // MARK: Plus button action
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
         // If touches.count == 2, then user is trying to rotate object
         guard touches.count == 1 else {
             return
@@ -114,27 +114,17 @@ class ViewController: UIViewController {
 //            node.removeFromParentNode()
 //        }
     }
-}
-
-extension ViewController: ARSKViewDelegate {
-        
-    //    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-    //
-    //    }
     
-    func view(_ view: ARSKView, didAdd node: SKNode, for anchor: ARAnchor) {
-        
+    @IBAction func refreshButtonTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Restart Scene", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Destructive action"), style: .default, handler: { _ in
+            NSLog("The Restart Scene \"OK\" destructive action alert occured.")
+            self.restartScene()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .destructive, handler: { _ in
+            NSLog("The Restart Scene \"Cancel\" escape alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        
-    }
 }
