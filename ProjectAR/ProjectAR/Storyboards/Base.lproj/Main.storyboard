@@ -38,7 +38,6 @@
                                 <state key="normal" image="reset"/>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uuk-WW-G3E"/>
-                                    <action selector="resetButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="pHR-ty-rqq"/>
                                 </connections>
                             </button>
                         </subviews>
