@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
@@ -36,12 +37,6 @@ class ViewController: UIViewController {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         sceneView.debugOptions = [.showFeaturePoints]
-        
-//        // Create a new scene
-//        let scene = SCNScene()
-//
-//        // Set the scene to the view
-//        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,12 +109,22 @@ class ViewController: UIViewController {
 //            node.removeFromParentNode()
 //        }
     }
+    @IBAction func resetButtonTouchDown(_ sender: UIButton) {
+//
+    }
     
-    @IBAction func refreshButtonTapped(_ sender: UIButton) {
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Restart Scene", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Destructive action"), style: .default, handler: { _ in
             NSLog("The Restart Scene \"OK\" destructive action alert occured.")
             self.restartScene()
+            
+            // Spring rewind animation for user feedback
+            let rewindAnimation = CASpringAnimation(keyPath: "transform.rotation")
+            rewindAnimation.fromValue = 0
+            rewindAnimation.toValue = Double.pi * 2
+            rewindAnimation.duration = 1.2
+            self.resetButton.layer.add(rewindAnimation, forKey: nil)
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .destructive, handler: { _ in
             NSLog("The Restart Scene \"Cancel\" escape alert occured.")
