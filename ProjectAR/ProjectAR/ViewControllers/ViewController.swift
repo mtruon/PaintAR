@@ -89,8 +89,8 @@ class ViewController: UIViewController {
             
             /* TODO: Move this into different code for object selection */
             
-            let modelURL = URL(fileReferenceLiteralResourceName: "models.scnassets/Painting/painting.scn")
-            guard let paintedImage = UIImage(named: "models.scnassets/Painting/textures/jmb-cabeza.jpg") else {
+            let modelURL = URL(fileReferenceLiteralResourceName: selectedVirtualObject)
+            guard let paintedImage = UIImage(named: selectedPaintingImage) else {
                 return
             }
             guard let frame = VirtualObject(using: paintedImage, url: modelURL) else { return }
@@ -109,13 +109,11 @@ class ViewController: UIViewController {
 //            node.removeFromParentNode()
 //        }
     }
-    @IBAction func resetButtonTouchDown(_ sender: UIButton) {
-//
-    }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Restart Scene", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Destructive action"), style: .default, handler: { _ in
+        let resetMessage = "All virtual objects will be removed and the current configuration will be recreated."
+        let alert = UIAlertController(title: "Restart Scene", message: resetMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Destructive action"), style: .destructive, handler: { _ in
             NSLog("The Restart Scene \"OK\" destructive action alert occured.")
             self.restartScene()
             
@@ -126,7 +124,7 @@ class ViewController: UIViewController {
             rewindAnimation.duration = 1.2
             self.resetButton.layer.add(rewindAnimation, forKey: nil)
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .default, handler: { _ in
             NSLog("The Restart Scene \"Cancel\" escape alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
