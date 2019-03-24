@@ -89,8 +89,8 @@ class ViewController: UIViewController {
             
             /* TODO: Move this into different code for object selection */
             
-            let modelURL = URL(fileReferenceLiteralResourceName: "models.scnassets/Painting/painting.scn")
-            guard let paintedImage = UIImage(named: "models.scnassets/Painting/textures/jmb-cabeza.jpg") else {
+            let modelURL = URL(fileReferenceLiteralResourceName: selectedVirtualObject)
+            guard let paintedImage = UIImage(named: selectedPaintingImage) else {
                 return
             }
             guard let frame = VirtualObject(using: paintedImage, url: modelURL) else { return }
