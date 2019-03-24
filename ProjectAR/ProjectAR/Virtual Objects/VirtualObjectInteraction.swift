@@ -23,7 +23,7 @@ class VirtualObjectInteraction {
     
     func placeObject(at point: CGPoint, using result: ARHitTestResult) {
         guard selectedObject != nil, let planeAnchor = result.anchor as? ARPlaneAnchor else { return }
-        isSelected = true
+//        isSelected = true
         let planePosition = result.worldTransform.columns.3
         selectedObject!.position = SCNVector3(planePosition.x, planePosition.y, planePosition.z)
         sceneView.scene.rootNode.addChildNode(selectedObject!)

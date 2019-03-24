@@ -23,4 +23,18 @@ class VirtualObjectLoader {
         }
         paintingNode.geometry?.firstMaterial?.diffuse.contents = object.paintedImage
     }
+    
+    func removeVirtualObject(at index: Int) {
+        guard loadedObjects.indices.contains(index) else { return }
+        
+        loadedObjects[index].removeFromParentNode()
+        loadedObjects.remove(at: index)
+    }
+    
+    func removeAllVirtualObject() {
+        // Reverse the list of indicies to avoid skipping objects others are removed
+        for index in loadedObjects.indices.reversed() {
+            removeVirtualObject(at: index)
+        }
+    }
 }

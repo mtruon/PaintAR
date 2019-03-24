@@ -109,13 +109,10 @@ class ViewController: UIViewController {
 //            node.removeFromParentNode()
 //        }
     }
-    @IBAction func resetButtonTouchDown(_ sender: UIButton) {
-//
-    }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        let restartMessage = "All virtual objects will be removed and the configuration will be recreated."
-        let alert = UIAlertController(title: "Restart Scene", message: restartMessage, preferredStyle: .alert)
+        let resetMessage = "All virtual objects will be removed and the current configuration will be recreated."
+        let alert = UIAlertController(title: "Restart Scene", message: resetMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Destructive action"), style: .destructive, handler: { _ in
             NSLog("The Restart Scene \"OK\" destructive action alert occured.")
             self.restartScene()

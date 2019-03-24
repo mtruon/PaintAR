@@ -11,6 +11,7 @@
 		4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3822384305002029BF /* VirtualObject.swift */; };
 		4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */; };
 		4CF7AB3D22394585002029BF /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */; };
+		4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */; };
 		4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */; };
 		9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60A82208AFCB003D017B /* AppDelegate.swift */; };
 		9B8A60AB2208AFCB003D017B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A60AA2208AFCB003D017B /* art.scnassets */; };
@@ -48,6 +49,7 @@
 		4CF7AB3822384305002029BF /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
 		4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
+		4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
 		4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		9B8A60A52208AFCA003D017B /* ProjectAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8A60A82208AFCB003D017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9BEB427E224469BD0089DA32 /* View Controllers */,
+				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
 				4CF7AB3E22394E4B002029BF /* Virtual Objects */,
 				9B8A60B12208AFCC003D017B /* Assets.xcassets */,
 				9B8A60B62208AFCC003D017B /* Info.plist */,
@@ -320,6 +323,7 @@
 				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
 				4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
+				4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */,
 				9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */,
 				4CF7AB3D22394585002029BF /* VirtualObjectInteraction.swift in Sources */,
 			);
