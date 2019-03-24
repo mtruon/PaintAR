@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Need Global to store selected virtual object
+// Need Global to store selected painting image
 public var selectedPaintingImage: String = paintingImagesFetcher[0]
 
 class ImageSelectionTableViewController: UITableViewController {

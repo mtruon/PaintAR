@@ -127,7 +127,7 @@ class ViewController: UIViewController {
             rewindAnimation.duration = 1.2
             self.resetButton.layer.add(rewindAnimation, forKey: nil)
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .cancel, handler: { _ in
             NSLog("The Restart Scene \"Cancel\" escape alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)

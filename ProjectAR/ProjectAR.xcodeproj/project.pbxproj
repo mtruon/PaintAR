@@ -135,7 +135,6 @@
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9BEB427E224469BD0089DA32 /* View Controllers */,
-				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
 				4CF7AB3E22394E4B002029BF /* Virtual Objects */,
 				9B8A60B12208AFCC003D017B /* Assets.xcassets */,
 				9B8A60B62208AFCC003D017B /* Info.plist */,
@@ -175,6 +174,7 @@
 		9BEB427E224469BD0089DA32 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
 				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
 				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
 				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
@@ -502,13 +502,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XEWNU67N93;
+				DEVELOPMENT_TEAM = ZGGZY43P22;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Michael";
+				PRODUCT_BUNDLE_IDENTIFIER = school.ProjectAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -522,13 +522,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XEWNU67N93;
+				DEVELOPMENT_TEAM = ZGGZY43P22;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Michael";
+				PRODUCT_BUNDLE_IDENTIFIER = school.ProjectAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
