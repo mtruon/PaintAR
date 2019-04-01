@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
-    
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
     
     // Loads virtual objects
@@ -24,6 +23,10 @@ class ViewController: UIViewController {
     
     var isRestartAvailable = true
     
+    /// The view controller that displays the onboarding and user directive messages
+    lazy var messageViewController: MessageViewController = {
+        return children.lazy.compactMap({ $0 as? MessageViewController }).first!
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +85,9 @@ class ViewController: UIViewController {
         guard let touchLocation = touches.first?.location(in: sceneView) else {
             return
         }
+        
+        // REMOVE: Testing feature
+        messageViewController.displayMessage("Hello ✌🏽", forDuration: 3.0)
         
         
         let hitTestResult = sceneView.hitTest(touchLocation, types: [.existingPlaneUsingExtent])
