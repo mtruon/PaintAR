@@ -86,10 +86,6 @@ class ViewController: UIViewController {
             return
         }
         
-        // REMOVE: Testing feature
-        messageViewController.displayMessage("Hello ✌🏽", forDuration: 3.0)
-        
-        
         let hitTestResult = sceneView.hitTest(touchLocation, types: [.existingPlaneUsingExtent])
         if let result = hitTestResult.first {
             
@@ -106,17 +102,6 @@ class ViewController: UIViewController {
             
             
         }
-    }
-    
-    @IBAction func plusButtonTapped(_ sender: UIButton) {
-        // TODO: Implement object modal
-//        // remove all objects
-//        sceneView.scene.rootNode.enumerateChildNodes { (node,_) in
-//            node.removeFromParentNode()
-//        }
-    }
-    @IBAction func resetButtonTouchDown(_ sender: UIButton) {
-//
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
