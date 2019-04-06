@@ -18,7 +18,7 @@ class MessageViewController: UIViewController {
     private var messages: [(String, TimeInterval)] = []
     
     // A Timers for hiding messages.
-    var messageHideTimer: Timer?
+    var messageHideTimer: Timer? = Timer()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,9 +35,10 @@ class MessageViewController: UIViewController {
     }
     
     func clearScheduledMessage() {
-        for i in (0..<messages.count).reversed() {
-            messages.remove(at: i)
-        }
+        messageHideTimer?.invalidate()
+        messageHideTimer = Timer()
+        messages.removeAll()
+        hideMessage()
     }
     
     func scheduleMessage(_ text: String, forDuration seconds: TimeInterval) {
@@ -52,21 +53,21 @@ class MessageViewController: UIViewController {
     
     /// Replaces and schedules a new message to be displayed immediately
     func scheduleMessageImmediately(_ text: String, forDuration seconds: TimeInterval) {
-        let message = (text, seconds)
-        
-        if !messages.isEmpty {
-            messages.insert(message, at: 1)
+        if messages.isEmpty {
+            scheduleMessage(text, forDuration: seconds)
         } else {
-            messages.append(message)
+            let message = (text, seconds)
+            // Halt the timer
+            messageHideTimer?.invalidate()
+            messageHideTimer = Timer()
+            
+            messages.removeFirst()
+            messages.insert(message, at: 0)
+            displayMessage(text, forDuration: seconds)
         }
-        
-        displayMessage(<#T##message: String##String#>, forDuration: <#T##TimeInterval#>)
     }
     
     private func displayMessage(_ message: String, forDuration seconds: TimeInterval) {
-        // Cancel or stop a message from being sent
-        messageHideTimer?.invalidate()
-        
         self.displayDuration = seconds
         showMessage(message)
     }
@@ -99,8 +100,15 @@ class MessageViewController: UIViewController {
         
         CATransaction.commit()
         
-        messageHideTimer = Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: false, block: { [weak self] _ in
-            self?.hideMessage()
+        // Creates a count down timer which will invalidate timer and hide the current message
+        messageHideTimer?.invalidate()
+        messageHideTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
+            self?.displayDuration -= 1
+            if ((self?.displayDuration)! <= 0) {
+                self?.hideMessage()
+                timer.invalidate()
+                
+            }
         })
     }
     
@@ -109,6 +117,7 @@ class MessageViewController: UIViewController {
             UIView.animate(withDuration: 1.0, delay: 2.0, options: [], animations: {
                 self.messageView.layer.opacity = 0
             }, completion: { _ in
+                guard self.messages.isEmpty != true else { return }
                 self.messageView.isHidden = true
                 
                 // Remove the message was just displayed from the queue

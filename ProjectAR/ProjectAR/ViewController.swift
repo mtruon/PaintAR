@@ -43,10 +43,6 @@ class ViewController: UIViewController {
         
         messageViewController.scheduleMessage("Hello 👋!", forDuration: 1.5)
         messageViewController.scheduleMessage("Begin by pointing at a wall", forDuration: 1.5)
-        
-        for i in 0...2 {
-            messageViewController.scheduleMessage("\(i)", forDuration: 0.8)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,9 +88,6 @@ class ViewController: UIViewController {
         guard touches.count == 1 else { return }
         
         guard let touchLocation = touches.first?.location(in: sceneView) else { return }
-        
-        // Testoimg
-        messageViewController.scheduleMessageImmediately("TAP", forDuration: 0.5)
         
         let scnHitTestResult = sceneView.hitTest(touchLocation, options: [SCNHitTestOption.boundingBoxOnly: true])
         for result in scnHitTestResult {

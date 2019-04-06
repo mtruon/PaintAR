@@ -24,6 +24,7 @@ extension ViewController {
         virtualObjectInteraction.releaseSelectedObject()
         
         // TODO: Restart UI when implemented
+        messageViewController.clearScheduledMessage()
         
         // Recreate session configuration
         let configuration = ARWorldTrackingConfiguration()

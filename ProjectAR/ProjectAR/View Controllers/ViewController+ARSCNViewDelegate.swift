@@ -46,7 +46,7 @@ extension ViewController: ARSCNViewDelegate {
         // Ensures that we received a vertical plane
         guard let planeAnchor = anchor as? ARPlaneAnchor, planeAnchor.alignment == .vertical else { return }
         
-        messageViewController.scheduleMessageImmediately("A Wall was found.", forDuration: 2.0)
+        messageViewController.scheduleMessageImmediately("A Wall was found.", forDuration: 1.0)
 //        let wall = createWall(for: planeAnchor)
 //        node.addChildNode(wall)
     }
