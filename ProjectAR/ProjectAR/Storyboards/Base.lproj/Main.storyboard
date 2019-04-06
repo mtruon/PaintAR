@@ -26,7 +26,6 @@
                                 <state key="normal" image="add"/>
                                 <state key="selected" image="addPressed"/>
                                 <connections>
-                                    <action selector="plusButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rlz-1b-kgA"/>
                                     <segue destination="XEV-lh-fLK" kind="presentation" id="8ah-lv-JHi"/>
                                 </connections>
                             </button>
@@ -39,7 +38,6 @@
                                 <state key="normal" image="reset"/>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uuk-WW-G3E"/>
-                                    <action selector="resetButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="pHR-ty-rqq"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-qk-Gga">

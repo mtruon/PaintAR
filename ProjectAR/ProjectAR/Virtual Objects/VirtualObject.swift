@@ -23,3 +23,17 @@ class VirtualObject: SCNReferenceNode {
         fatalError("init(coder:) has not been implemented and disabled")
     }
 }
+
+extension VirtualObject {
+    /// Returns a `VirtualObject` if one exists as an ancestor to the provided node.
+    static func existingObjectContainingNode(_ node: SCNNode) -> VirtualObject? {
+        if let virtualObjectRoot = node as? VirtualObject {
+            return virtualObjectRoot
+        }
+        
+        guard let parent = node.parent else { return nil }
+        
+        // Recurse up to check if the parent is a `VirtualObject`.
+        return existingObjectContainingNode(parent)
+    }
+}

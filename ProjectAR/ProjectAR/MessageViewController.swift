@@ -13,10 +13,10 @@ class MessageViewController: UIViewController {
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    private var displayDuration: TimeInterval = 5.0
+    var displayDuration: TimeInterval = 5.0
     
     // Timer for hiding messages.
-    private var messageHideTimer: Timer?
+    var messageHideTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,11 @@ class MessageViewController: UIViewController {
     }
     
     func showMessage(_ message: String) {
-        messageLabel.text = message
-        messageView.isHidden = false
-        messageView.layer.opacity = 1
+        DispatchQueue.main.async {
+            self.messageLabel.text = message
+            self.messageView.isHidden = false
+            self.messageView.layer.opacity = 1
+        }
         
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)
@@ -58,11 +60,13 @@ class MessageViewController: UIViewController {
     }
     
     func hideMessage() {
-        UIView.animate(withDuration: 1.0, delay: 2.0, options: [], animations: {
-            self.messageView.layer.opacity = 0
-        }, completion: { _ in
-            self.messageView.isHidden = true
-        })
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1.0, delay: 2.0, options: [], animations: {
+                self.messageView.layer.opacity = 0
+            }, completion: { _ in
+                self.messageView.isHidden = true
+            })
+        }
     }
     
     func displayMessage(_ message: String, forDuration seconds: TimeInterval) {

@@ -11,17 +11,12 @@ import ARKit
 
 extension ViewController {
     
-    private func changeResetButtonOpacity() {
-        
-    }
-    
     func restartScene() {
         isRestartAvailable = false
         
-        // Animate restart button to a depressed state
-        
+        // Virtual Object Interaction
         virtualObjectLoader.removeAllVirtualObject()
-        virtualObjectInteraction.selectedObject = nil
+        virtualObjectInteraction.releaseSelectedObject()
         
         // TODO: Restart UI when implemented
         
