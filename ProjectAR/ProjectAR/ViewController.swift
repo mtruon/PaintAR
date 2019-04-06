@@ -40,6 +40,13 @@ class ViewController: UIViewController {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         sceneView.debugOptions = [.showFeaturePoints]
+        
+        messageViewController.scheduleMessage("Hello 👋!", forDuration: 1.5)
+        messageViewController.scheduleMessage("Begin by pointing at a wall", forDuration: 1.5)
+        
+        for i in 0...2 {
+            messageViewController.scheduleMessage("\(i)", forDuration: 0.8)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,12 +93,15 @@ class ViewController: UIViewController {
         
         guard let touchLocation = touches.first?.location(in: sceneView) else { return }
         
+        // Testoimg
+        messageViewController.scheduleMessageImmediately("TAP", forDuration: 0.5)
+        
         let scnHitTestResult = sceneView.hitTest(touchLocation, options: [SCNHitTestOption.boundingBoxOnly: true])
         for result in scnHitTestResult {
             if let object = VirtualObject.existingObjectContainingNode(result.node) {
                 // A virtual object has been found do not continue
                 print("Virtual Object hit @ \(object.referenceURL)")
-                messageViewController.displayMessage("Touched an object", forDuration: 1.0)
+                messageViewController.scheduleMessageImmediately("Touched an object", forDuration: 1.0)
                 virtualObjectInteraction.selectObject(object)
                 return
             }

@@ -11,6 +11,11 @@ import ARKit
 
 extension ViewController {
     
+    func restartUI() {
+        
+//        messageViewController.
+    }
+    
     func restartScene() {
         isRestartAvailable = false
         
