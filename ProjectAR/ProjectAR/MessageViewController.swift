@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by MICHAEL on 2019-03-31.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import UIKit
@@ -18,9 +18,13 @@ class MessageViewController: UIViewController {
     // Timer for hiding messages.
     var messageHideTimer: Timer?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        messageView.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageView.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {

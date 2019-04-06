@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by MICHAEL on 2019-03-12.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import Foundation

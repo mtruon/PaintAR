@@ -3,7 +3,7 @@
 //  ProjectARTests
 //
 //  Created by Kushal Pandya on 2019-02-04.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import XCTest
