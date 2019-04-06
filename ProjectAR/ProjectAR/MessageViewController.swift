@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by MICHAEL on 2019-03-31.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import UIKit
@@ -15,12 +15,18 @@ class MessageViewController: UIViewController {
     
     private var displayDuration: TimeInterval = 5.0
     
-    // Timer for hiding messages.
-    private var messageHideTimer: Timer?
+    private var messages: [(String, TimeInterval)] = []
+    
+    // A Timers for hiding messages.
+    var messageHideTimer: Timer? = Timer()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        messageView.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageView.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,11 +34,53 @@ class MessageViewController: UIViewController {
         messageView.layer.applyRoundCornerMaskWith(radius: messageView.frame.height/2, corners: [.topRight, .topLeft, .bottomRight])
     }
     
-    func showMessage(_ message: String) {
-        messageLabel.text = message
-        messageView.isHidden = false
-        messageView.layer.opacity = 1
+    func clearScheduledMessage() {
+        messageHideTimer?.invalidate()
+        messageHideTimer = Timer()
+        messages.removeAll()
+        hideMessage()
+    }
+    
+    func scheduleMessage(_ text: String, forDuration seconds: TimeInterval) {
+        let message = (text, seconds)
+        messages.append(message)
         
+        // If only one message exists then we start the queue by displaying the first message
+        if messages.count == 1 {
+            displayMessage(text, forDuration: seconds)
+        }
+    }
+    
+    /// Replaces and schedules a new message to be displayed immediately
+    func scheduleMessageImmediately(_ text: String, forDuration seconds: TimeInterval) {
+        if messages.isEmpty {
+            scheduleMessage(text, forDuration: seconds)
+        } else {
+            let message = (text, seconds)
+            // Halt the timer
+            messageHideTimer?.invalidate()
+            messageHideTimer = Timer()
+            
+            messages.removeFirst()
+            messages.insert(message, at: 0)
+            displayMessage(text, forDuration: seconds)
+        }
+    }
+    
+    private func displayMessage(_ message: String, forDuration seconds: TimeInterval) {
+        self.displayDuration = seconds
+        showMessage(message)
+    }
+    
+    // - MARK: Message Animations and Transitions
+    private func showMessage(_ message: String) {
+        DispatchQueue.main.async {
+            self.messageLabel.text = message
+            self.messageView.isHidden = false
+            self.messageView.layer.opacity = 1
+        }
+        
+        // Animating the transition and fade in
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)
         
@@ -52,25 +100,37 @@ class MessageViewController: UIViewController {
         
         CATransaction.commit()
         
-        messageHideTimer = Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: false, block: { [weak self] _ in
-            self?.hideMessage()
-        })
-    }
-    
-    func hideMessage() {
-        UIView.animate(withDuration: 1.0, delay: 2.0, options: [], animations: {
-            self.messageView.layer.opacity = 0
-        }, completion: { _ in
-            self.messageView.isHidden = true
-        })
-    }
-    
-    func displayMessage(_ message: String, forDuration seconds: TimeInterval) {
-        // Cancel or stop a message from being sent
+        // Creates a count down timer which will invalidate timer and hide the current message
         messageHideTimer?.invalidate()
-        
-        self.displayDuration = seconds
-        showMessage(message)
+        messageHideTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
+            self?.displayDuration -= 1
+            if ((self?.displayDuration)! <= 0) {
+                self?.hideMessage()
+                timer.invalidate()
+                
+            }
+        })
+    }
+    
+    private func hideMessage() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1.0, delay: 2.0, options: [], animations: {
+                self.messageView.layer.opacity = 0
+            }, completion: { _ in
+                guard self.messages.isEmpty != true else { return }
+                self.messageView.isHidden = true
+                
+                // Remove the message was just displayed from the queue
+                self.messages.removeFirst()
+                
+                // If the queue contains additional messages then display the new head
+                if !self.messages.isEmpty {
+                    if let upcomingMessage = self.messages.first {
+                        self.displayMessage(upcomingMessage.0, forDuration: upcomingMessage.1)
+                    }
+                }
+            })
+        }
     }
     
 }

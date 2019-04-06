@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by MICHAEL on 2019-03-13.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import Foundation
@@ -11,19 +11,20 @@ import ARKit
 
 extension ViewController {
     
-    private func changeResetButtonOpacity() {
+    func restartUI() {
         
+//        messageViewController.
     }
     
     func restartScene() {
         isRestartAvailable = false
         
-        // Animate restart button to a depressed state
-        
+        // Virtual Object Interaction
         virtualObjectLoader.removeAllVirtualObject()
-        virtualObjectInteraction.selectedObject = nil
+        virtualObjectInteraction.releaseSelectedObject()
         
         // TODO: Restart UI when implemented
+        messageViewController.clearScheduledMessage()
         
         // Recreate session configuration
         let configuration = ARWorldTrackingConfiguration()

@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by Kushal Pandya on 2019-02-04.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import UIKit
@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         sceneView.debugOptions = [.showFeaturePoints]
+        
+        messageViewController.scheduleMessage("Hello 👋!", forDuration: 1.5)
+        messageViewController.scheduleMessage("Begin by pointing at a wall", forDuration: 1.5)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,48 +78,41 @@ class ViewController: UIViewController {
         camera.maximumExposure = 3
     }
     
-    // MARK: Plus button action
+    // - MARK: UI Actions
+    /* Handles interaction with the scene view if no virtual object is selected. The
+     use should be able to select a virtual object or place an object. */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // If touches.count == 2, then user is trying to rotate object
-        guard touches.count == 1 else {
-            return
+        guard virtualObjectInteraction.selectedObject == nil else { return }
+        
+        // If touches.count is >= 2 then the user is likely trying to rotate the object.
+        guard touches.count == 1 else { return }
+        
+        guard let touchLocation = touches.first?.location(in: sceneView) else { return }
+        
+        let scnHitTestResult = sceneView.hitTest(touchLocation, options: [SCNHitTestOption.boundingBoxOnly: true])
+        for result in scnHitTestResult {
+            if let object = VirtualObject.existingObjectContainingNode(result.node) {
+                // A virtual object has been found do not continue
+                print("Virtual Object hit @ \(object.referenceURL)")
+                messageViewController.scheduleMessageImmediately("Touched an object", forDuration: 1.0)
+                virtualObjectInteraction.selectObject(object)
+                return
+            }
         }
-        
-        guard let touchLocation = touches.first?.location(in: sceneView) else {
-            return
-        }
-        
-        // REMOVE: Testing feature
-        messageViewController.displayMessage("Hello ✌🏽", forDuration: 3.0)
-        
         
         let hitTestResult = sceneView.hitTest(touchLocation, types: [.existingPlaneUsingExtent])
         if let result = hitTestResult.first {
-            
-            /* TODO: Move this into different code for object selection */
             
             let modelURL = URL(fileReferenceLiteralResourceName: selectedVirtualObject)
             guard let paintedImage = UIImage(named: selectedPaintingImage) else {
                 return
             }
-            guard let frame = VirtualObject(using: paintedImage, url: modelURL) else { return }
-            virtualObjectLoader.loadVirtualObject(frame)
-            virtualObjectInteraction.selectedObject = frame
+            guard let painting = VirtualObject(using: paintedImage, url: modelURL) else { return }
+            virtualObjectLoader.loadVirtualObject(painting)
+            virtualObjectInteraction.selectObject(painting)
             virtualObjectInteraction.placeObject(at: touchLocation, using: result)
-            
-            
+            virtualObjectInteraction.releaseSelectedObject()
         }
-    }
-    
-    @IBAction func plusButtonTapped(_ sender: UIButton) {
-        // TODO: Implement object modal
-//        // remove all objects
-//        sceneView.scene.rootNode.enumerateChildNodes { (node,_) in
-//            node.removeFromParentNode()
-//        }
-    }
-    @IBAction func resetButtonTouchDown(_ sender: UIButton) {
-//
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
@@ -139,4 +135,16 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+}
+
+extension ARSCNView {
+    /// Hit tests against the `sceneView` to find an object at the provided point.
+//    func virtualObject(at point: CGPoint) -> VirtualObject? {
+//        let hitTestOptions: [SCNHitTestOption: Any] = [.boundingBoxOnly: true]
+//        let hitTestResults = hitTest(point, options: hitTestOptions)
+//
+//        return hitTestResults.lazy.compactMap { result in
+//            return VirtualObject.existingObjectContainingNode(result.node)
+//            }.first
+//    }
 }

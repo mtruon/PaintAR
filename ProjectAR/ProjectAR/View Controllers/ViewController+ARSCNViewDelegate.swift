@@ -3,7 +3,7 @@
 //  ProjectAR
 //
 //  Created by MICHAEL on 2019-03-02.
-//  Copyright © 2019 Kushal Pandya. All rights reserved.
+//  Copyright © 2019 Kushal Pandya, Michael Truong. All rights reserved.
 //
 
 import Foundation
@@ -46,8 +46,9 @@ extension ViewController: ARSCNViewDelegate {
         // Ensures that we received a vertical plane
         guard let planeAnchor = anchor as? ARPlaneAnchor, planeAnchor.alignment == .vertical else { return }
         
-        let wall = createWall(for: planeAnchor)
-        node.addChildNode(wall)
+        messageViewController.scheduleMessageImmediately("A Wall was found.", forDuration: 1.0)
+//        let wall = createWall(for: planeAnchor)
+//        node.addChildNode(wall)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
