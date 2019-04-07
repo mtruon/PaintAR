@@ -26,7 +26,7 @@
                                 <state key="normal" image="add"/>
                                 <state key="selected" image="addPressed"/>
                                 <connections>
-                                    <segue destination="XEV-lh-fLK" kind="presentation" id="8ah-lv-JHi"/>
+                                    <segue destination="bPU-nP-rW9" kind="presentation" id="RFi-Jl-d3K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-eL-OOd" userLabel="Reset Button">
@@ -81,7 +81,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="selectionViewController" id="BVT-pd-fza" customClass="SelectionTableViewController" customModule="ProjectAR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LY6-Ci-WLW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -122,12 +122,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSj-Ji-RBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="889"/>
+            <point key="canvasLocation" x="1633" y="951"/>
+        </scene>
+        <!--Selection Modal View Controller-->
+        <scene sceneID="c5n-9P-QEr">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="bPU-nP-rW9" customClass="SelectionModalViewController" customModule="ProjectAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dGG-zK-IE0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxD-yE-icF">
+                                <rect key="frame" x="0.0" y="120" width="414" height="616"/>
+                                <connections>
+                                    <segue destination="XEV-lh-fLK" kind="embed" id="HnW-9k-mlN"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HxD-yE-icF" firstAttribute="leading" secondItem="pTK-ew-7m7" secondAttribute="leading" id="8Fa-P8-uH3"/>
+                            <constraint firstItem="pTK-ew-7m7" firstAttribute="trailing" secondItem="HxD-yE-icF" secondAttribute="trailing" id="Kxn-Rw-TqY"/>
+                            <constraint firstItem="HxD-yE-icF" firstAttribute="top" secondItem="pTK-ew-7m7" secondAttribute="top" constant="100" id="mOr-eI-4Dh"/>
+                            <constraint firstItem="pTK-ew-7m7" firstAttribute="bottom" secondItem="HxD-yE-icF" secondAttribute="bottom" id="qEJ-ng-kQU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pTK-ew-7m7"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="HxD-yE-icF" id="z3L-DK-dRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPa-be-mOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xuZ-U9-vB8">
             <objects>
-                <navigationController id="XEV-lh-fLK" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="overCurrentContext" id="XEV-lh-fLK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="JFk-r6-OlB">
                         <rect key="frame" x="0.0" y="20" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -141,7 +173,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBc-aQ-6yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="889"/>
+            <point key="canvasLocation" x="888" y="951"/>
         </scene>
         <!--Image Selection Table View Controller-->
         <scene sceneID="gsk-pg-kwf">
@@ -178,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81w-ND-7kD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="889"/>
+            <point key="canvasLocation" x="2384" y="999"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="VeM-pe-ees">
