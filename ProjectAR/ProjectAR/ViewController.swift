@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     let virtualObjectLoader = VirtualObjectLoader()
     
     var isRestartAvailable = true
-    var timer = Timer()
+    var helpTimer = Timer()
     var isUserHavingTrouble = true
     
     /// The view controller that displays the onboarding and user directive messages
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         sceneView.showsStatistics = true
         sceneView.debugOptions = [.showFeaturePoints]
         
-        setUpTimer()
+        setUpHelpTimer()
         messageViewController.scheduleMessage("Hello 👋!", forDuration: 1.5)
         messageViewController.scheduleMessage("Begin by pointing at a wall", forDuration: 1.5)
     }
@@ -66,11 +66,15 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
     
-    private func setUpTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: {_ in
+    private func setUpHelpTimer() {
+        helpTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: {_ in
             if self.isUserHavingTrouble {
                 self.messageViewController.scheduleMessage("Try moving closer to the wall", forDuration: 1.5)
                 self.messageViewController.scheduleMessage("Or change the lighting around you", forDuration: 1.5)
+            }
+            else {
+                // Removes the timer from the runloop since it's repeating (firing) each interval.
+                self.helpTimer.invalidate()
             }
         })
     }
