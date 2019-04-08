@@ -128,6 +128,8 @@ class ViewController: UIViewController {
             rewindAnimation.toValue = Double.pi * 2
             rewindAnimation.duration = 1.2
             self.resetButton.layer.add(rewindAnimation, forKey: nil)
+            
+            self.messageViewController.scheduleMessage("The scene was restarted", forDuration: 1.5)
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Escape action"), style: .cancel, handler: { _ in
             NSLog("The Restart Scene \"Cancel\" escape alert occured.")

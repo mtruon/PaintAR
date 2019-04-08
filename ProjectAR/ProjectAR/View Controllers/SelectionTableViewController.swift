@@ -32,8 +32,21 @@ class SelectionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let virtualObjectCell = virtualObject(rawValue: indexPath.row)
-        cell.textLabel?.text = "\(virtualObjectCell!)"
+        
+        if let virtualObjectCell = virtualObject(rawValue: indexPath.row) {
+            switch virtualObjectCell {
+            case .oilPainting:
+                cell.textLabel?.text = "Oil Painting"
+                cell.accessoryType = .disclosureIndicator
+            case .ledTv:
+                cell.textLabel?.text = "LED TV"
+            }
+        }
+        
+        // Display checkmark if ledtv is selected
+        if selectedVirtualObject != virtualObjectsFetcher[0] && selectedVirtualObject == virtualObjectsFetcher[indexPath.row] {
+            cell.accessoryType = .checkmark
+        }
 
         return cell
     }
