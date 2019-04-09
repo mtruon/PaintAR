@@ -25,8 +25,22 @@ class ImageSelectionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let paintingImageCell = paintingImages(rawValue: indexPath.row)
-        cell.textLabel?.text = "\(paintingImageCell!)"
+        
+        if let paintingImageCell = paintingImages(rawValue: indexPath.row) {
+            switch paintingImageCell {
+            case .cleo:
+                cell.textLabel?.text = "Cleopatra"
+            case .selfPortrait:
+                cell.textLabel?.text = "Self Portrait of Michael"
+            case .cabeza:
+                cell.textLabel?.text = "Oil Painting Doodle"
+            }
+        }
+        
+        // Display checkmark if selected
+        if selectedPaintingImage == paintingImagesFetcher[indexPath.row] && selectedVirtualObject == virtualObjectsFetcher[0] {
+            cell.accessoryType = .checkmark
+        }
         
         return cell
     }
