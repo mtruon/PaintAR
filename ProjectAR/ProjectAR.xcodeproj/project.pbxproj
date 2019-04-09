@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB477225922D800E85751 /* SelectionModalViewController.swift */; };
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
 		4CC1434C2251AC7B003DDCF7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */; };
 		4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3822384305002029BF /* VirtualObject.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C8CB477225922D800E85751 /* SelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModalViewController.swift; sourceTree = "<group>"; };
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		4CF7AB3822384305002029BF /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				9B8A60A82208AFCB003D017B /* AppDelegate.swift */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
+				4C8CB477225922D800E85751 /* SelectionModalViewController.swift */,
 				4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */,
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9BEB427E224469BD0089DA32 /* View Controllers */,
@@ -330,6 +333,7 @@
 				9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */,
 				4CC1434C2251AC7B003DDCF7 /* MessageViewController.swift in Sources */,
 				4CF7AB3D22394585002029BF /* VirtualObjectInteraction.swift in Sources */,
+				4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

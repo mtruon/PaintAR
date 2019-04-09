@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         setupCamera()
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         sceneView.debugOptions = [.showFeaturePoints]
         
         setUpHelpTimer()
