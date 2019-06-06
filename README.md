@@ -7,6 +7,6 @@ This mobile application was built as a tool to supplement consumer decisions and
 
 Other solutions existed, albeit crude. As a learning opportunity this application was built.
 
-## TO-DO:
-1. Improve hit testing
-2. Implement collection view in modal
+## Contributors
+- Kushal Pandya
+- Michael Truong
