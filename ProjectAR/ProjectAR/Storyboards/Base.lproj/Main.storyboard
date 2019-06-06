@@ -26,7 +26,7 @@
                                 <state key="normal" image="add"/>
                                 <state key="selected" image="addPressed"/>
                                 <connections>
-                                    <segue destination="bPU-nP-rW9" kind="presentation" id="RFi-Jl-d3K"/>
+                                    <segue destination="bPU-nP-rW9" kind="presentation" identifier="objectSelection" id="RFi-Jl-d3K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-eL-OOd" userLabel="Reset Button">

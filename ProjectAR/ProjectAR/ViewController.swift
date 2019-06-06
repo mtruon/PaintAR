@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    // Interaction Controller Objects
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
+    let dismissInteraction = DismissInteraction()
     
     // Loads virtual objects
     let virtualObjectLoader = VirtualObjectLoader()
@@ -153,6 +155,15 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "objectSelection" {
+            if let destinationViewController = segue.destination as? SelectionModalViewController {
+                destinationViewController.transitioningDelegate = self
+                destinationViewController.dismissInteraction = dismissInteraction
+            }
+        }
+    }
 }
 
 extension ARSCNView {
