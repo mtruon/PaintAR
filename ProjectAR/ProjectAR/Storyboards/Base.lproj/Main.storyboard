@@ -81,7 +81,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="selectionViewController" id="BVT-pd-fza" customClass="SelectionTableViewController" customModule="ProjectAR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LY6-Ci-WLW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -122,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSj-Ji-RBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="951"/>
+            <point key="canvasLocation" x="887" y="1661"/>
         </scene>
         <!--Selection Modal View Controller-->
         <scene sceneID="c5n-9P-QEr">
@@ -168,12 +168,66 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="BVT-pd-fza" kind="relationship" relationship="rootViewController" id="4NO-YJ-Zeg"/>
+                        <segue destination="Qdk-mT-KZw" kind="relationship" relationship="rootViewController" id="raU-ZX-DmF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBc-aQ-6yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888" y="951"/>
+        </scene>
+        <!--Select Object-->
+        <scene sceneID="p9i-EX-Asp">
+            <objects>
+                <collectionViewController id="Qdk-mT-KZw" customClass="ObjectSelectionViewController" customModule="ProjectAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vj8-Y6-woX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tWH-1B-ji4">
+                            <size key="itemSize" width="140" height="140"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="ZjV-W1-Tlj" customClass="ObjectViewCell" customModule="ProjectAR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ObjectHeaderView" id="5ks-4v-MTa" customClass="ObjectHeaderView" customModule="ProjectAR" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZb-fn-C0X">
+                                    <rect key="frame" x="23" y="11.666666666666664" width="125" height="27"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="nZb-fn-C0X" firstAttribute="centerY" secondItem="5ks-4v-MTa" secondAttribute="centerY" id="HBs-Ay-sVK"/>
+                                <constraint firstItem="nZb-fn-C0X" firstAttribute="leading" secondItem="5ks-4v-MTa" secondAttribute="leadingMargin" constant="15" id="nMi-UF-ZjN"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleLabel" destination="nZb-fn-C0X" id="aYo-eL-geM"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="Qdk-mT-KZw" id="iGh-W9-ELG"/>
+                            <outlet property="delegate" destination="Qdk-mT-KZw" id="NS7-Nh-eSz"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Select Object" id="kAW-DI-Pwc"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbA-NC-UTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708.6956521739132" y="950.54347826086962"/>
         </scene>
         <!--Image Selection Table View Controller-->
         <scene sceneID="gsk-pg-kwf">
@@ -210,7 +264,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81w-ND-7kD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2384" y="999"/>
+            <point key="canvasLocation" x="1616" y="1661"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="VeM-pe-ees">
