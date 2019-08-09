@@ -100,12 +100,27 @@ class ObjectSelectionViewController: UICollectionViewController {
     }
     */
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let virtualObjectCell = virtualObject(rawValue: indexPath.row)!
+        
+        
         return true
+        
+//        let virtualObjectCell = virtualObject(rawValue: indexPath.row)!
+//        selectedVirtualObject = virtualObjectsFetcher[indexPath.row]
+//
+//        switch virtualObjectCell {
+//        case .oilPainting:
+//            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "imageSelectionTableViewController") as? ImageSelectionTableViewController {
+//                if let navigationController = navigationController {
+//                    navigationController.pushViewController(viewController, animated: true)
+//                }
+//            }
+//
+//        default:
+//            dismiss(animated: true, completion: nil)
+//        }
     }
-    */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
