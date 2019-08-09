@@ -37,6 +37,13 @@ class ObjectSelectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Actions
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     // MARK: UICollectionViewDataSource
 

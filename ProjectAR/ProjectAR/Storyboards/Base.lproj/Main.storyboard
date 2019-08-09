@@ -223,7 +223,13 @@
                             <outlet property="delegate" destination="Qdk-mT-KZw" id="NS7-Nh-eSz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Select Object" id="kAW-DI-Pwc"/>
+                    <navigationItem key="navigationItem" title="Select Object" id="kAW-DI-Pwc">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="kHh-SU-wc0">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="Qdk-mT-KZw" id="HWe-eL-M52"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbA-NC-UTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
