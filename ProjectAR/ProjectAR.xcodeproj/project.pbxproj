@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
-		4C74495D22F12B71003D825D /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495C22F12B71003D825D /* ObjectSelectionViewController.swift */; };
+		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
+		4C74495D22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495C22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift */; };
 		4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* ObjectViewCell.swift */; };
 		4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB477225922D800E85751 /* SelectionModalViewController.swift */; };
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
@@ -55,7 +56,8 @@
 
 /* Begin PBXFileReference section */
 		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
-		4C74495C22F12B71003D825D /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
+		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
+		4C74495C22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewControllerTemp.swift; sourceTree = "<group>"; };
 		4C74495E22F12C5F003D825D /* ObjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewCell.swift; sourceTree = "<group>"; };
 		4C8CB477225922D800E85751 /* SelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModalViewController.swift; sourceTree = "<group>"; };
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
@@ -226,7 +228,8 @@
 				4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */,
 				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
 				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
-				4C74495C22F12B71003D825D /* ObjectSelectionViewController.swift */,
+				4C74495C22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift */,
+				4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */,
 				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
 				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
 			);
@@ -368,7 +371,7 @@
 			files = (
 				9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */,
 				9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */,
-				4C74495D22F12B71003D825D /* ObjectSelectionViewController.swift in Sources */,
+				4C74495D22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
 				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
 				9BEB4280224471110089DA32 /* VirtualObjects.swift in Sources */,
@@ -377,6 +380,7 @@
 				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
 				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
+				4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */,
 				4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
 				4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */,
@@ -564,11 +568,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-M";
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Mi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -584,11 +589,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-M";
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Mi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

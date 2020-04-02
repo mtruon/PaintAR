@@ -27,6 +27,7 @@ class MessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.messageView.backgroundColor = .systemBackground
     }
     
     override func viewDidLayoutSubviews() {
