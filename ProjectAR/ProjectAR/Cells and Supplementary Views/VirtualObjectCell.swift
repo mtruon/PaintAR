@@ -1,14 +1,14 @@
 //
-//  ObjectViewCell.swift
+//  VirtualObjectCell.swift
 //  ProjectAR
 //
-//  Created by MICHAEL on 2019-07-30.
-//  Copyright © 2019 Michael Truong. All rights reserved.
+//  Created by MICHAEL on 2020-04-04.
+//  Copyright © 2020 Michael Truong. All rights reserved.
 //
 
 import UIKit
 
-class ObjectViewCell: UICollectionViewCell {
+class VirtualObjectCell: UICollectionViewCell {
     
     static let reuseIdentifier = "virtual-object-reuse-identifier"
     let titleLabel = UILabel()
@@ -24,7 +24,7 @@ class ObjectViewCell: UICollectionViewCell {
     
 }
 
-extension ObjectViewCell {
+extension VirtualObjectCell {
     func configure() {
         backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         layer.borderColor = UIColor.black.cgColor

@@ -9,25 +9,28 @@
 import UIKit
 
 class ObjectSelectionViewController: UIViewController {
-    // TODO: Remove this global variable
-    // Need Global to store selected virtual object
+    // TODO: Remove this global variable -- Need Global to store selected virtual object
     public var selectedVirtualObject: String = virtualObjectsFetcher[0]
     
     var objectSelectionCollectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<VirtualObjectCollection, VirtualObject>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<VirtualObjectCollection, VirtualObject>! = nil
 
-    // Dummy Node
+    /* Dummy node which are simply identifiers that map to
+     a constant fetcher -- see paintingimages.swift and virtualobject.swift
+    
+     Need to implement a feature which loads objects
+     */
     private var virtualObjectCollections: [VirtualObjectCollection] = {
         return [
             VirtualObjectCollection(
                 title: "Paintings",
                 type: .painting,
-                virtualObjects: [VirtualObject(name: "P1"), VirtualObject(name: "P2"), VirtualObject(name: "P3")]),
+                virtualObjects: [VirtualObject(name: "Cleopatra"), VirtualObject(name: "Self Portrait"), VirtualObject(name: "Cabeza")]),
             VirtualObjectCollection(
                 title: "Electronics",
                 type: .electronic,
-                virtualObjects: [VirtualObject(name: "E1"), VirtualObject(name: "E2")])
+                virtualObjects: [VirtualObject(name: "LED Tv")])
         ]
     }()
     
@@ -93,7 +96,7 @@ extension ObjectSelectionViewController {
             ])
         
         // Registering cells..
-        objectSelectionCollectionView.register(ObjectViewCell.self, forCellWithReuseIdentifier: ObjectViewCell.reuseIdentifier)
+        objectSelectionCollectionView.register(VirtualObjectCell.self, forCellWithReuseIdentifier: VirtualObjectCell.reuseIdentifier)
         objectSelectionCollectionView.register(TitleSupplementaryView.self,
                                                forSupplementaryViewOfKind: "title-element-kind",
                                                withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
@@ -104,8 +107,8 @@ extension ObjectSelectionViewController {
                 (collectionView: UICollectionView, indexPath: IndexPath, virtualObject: VirtualObject) -> UICollectionViewCell? in
             // Get a cell of the desired kind.
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: ObjectViewCell.reuseIdentifier,
-                for: indexPath) as? ObjectViewCell
+                withReuseIdentifier: VirtualObjectCell.reuseIdentifier,
+                for: indexPath) as? VirtualObjectCell
                 else {
                     fatalError("Cannot create new cell")
                 }
@@ -148,6 +151,7 @@ extension ObjectSelectionViewController {
 
 extension ObjectSelectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         selectedPaintingImage =  paintingImagesFetcher[indexPath.row]
         print(virtualObjectCollections[indexPath.section].virtualObjects[indexPath.row].name)
         dismiss(animated: true, completion: nil)

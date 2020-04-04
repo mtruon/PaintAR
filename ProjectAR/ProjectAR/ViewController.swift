@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     let dismissInteraction = DismissInteraction()
     
     // Loads virtual objects
-    let virtualObjectLoader = VirtualObjectLoader()
+    let virtualObjectController = VirtualObjectController()
     
     var isRestartAvailable = true
     var helpTimer = Timer()
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
                 return
             }
             guard let painting = VirtualObjectNode(using: paintedImage, url: modelURL) else { return }
-            virtualObjectLoader.loadVirtualObject(painting)
+            virtualObjectController.loadVirtualObject(painting)
             virtualObjectInteraction.selectObject(painting)
             virtualObjectInteraction.placeObject(at: touchLocation, using: result)
             virtualObjectInteraction.releaseSelectedObject()
