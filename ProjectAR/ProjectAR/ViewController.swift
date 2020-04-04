@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         
         let scnHitTestResult = sceneView.hitTest(touchLocation, options: [SCNHitTestOption.boundingBoxOnly: true])
         for result in scnHitTestResult {
-            if let object = VirtualObject.existingObjectContainingNode(result.node) {
+            if let object = VirtualObjectNode.existingObjectContainingNode(result.node) {
                 // A virtual object has been found do not continue
                 print("Virtual Object hit @ \(object.referenceURL)")
                 messageViewController.scheduleMessageImmediately("Touched an object", forDuration: 1.0)
@@ -125,7 +125,7 @@ class ViewController: UIViewController {
             guard let paintedImage = UIImage(named: selectedPaintingImage) else {
                 return
             }
-            guard let painting = VirtualObject(using: paintedImage, url: modelURL) else { return }
+            guard let painting = VirtualObjectNode(using: paintedImage, url: modelURL) else { return }
             virtualObjectLoader.loadVirtualObject(painting)
             virtualObjectInteraction.selectObject(painting)
             virtualObjectInteraction.placeObject(at: touchLocation, using: result)

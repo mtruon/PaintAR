@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */; };
 		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
 		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
 		4C74495D22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495C22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift */; };
@@ -31,7 +32,6 @@
 		9B8A60B52208AFCC003D017B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A60B32208AFCC003D017B /* LaunchScreen.storyboard */; };
 		9B8A60C02208AFCC003D017B /* ProjectARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60BF2208AFCC003D017B /* ProjectARTests.swift */; };
 		9B8A60CB2208AFCC003D017B /* ProjectARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */; };
-		9BEB4280224471110089DA32 /* VirtualObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB427F224471110089DA32 /* VirtualObjects.swift */; };
 		9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB42812244720E0089DA32 /* PaintingImages.swift */; };
 		9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */; };
 		9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
 		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
 		4C74495C22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewControllerTemp.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		9B8A60C62208AFCC003D017B /* ProjectARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARUITests.swift; sourceTree = "<group>"; };
 		9B8A60CC2208AFCC003D017B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BEB427F224471110089DA32 /* VirtualObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjects.swift; sourceTree = "<group>"; };
 		9BEB42812244720E0089DA32 /* PaintingImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingImages.swift; sourceTree = "<group>"; };
 		9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewController.swift; sourceTree = "<group>"; };
 		9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				4C74495E22F12C5F003D825D /* ObjectViewCell.swift */,
+				4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -135,7 +136,6 @@
 		4CF7AB3E22394E4B002029BF /* Virtual Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9BEB427F224471110089DA32 /* VirtualObjects.swift */,
 				9BEB42812244720E0089DA32 /* PaintingImages.swift */,
 				4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */,
 				4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */,
@@ -372,9 +372,9 @@
 				9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */,
 				9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */,
 				4C74495D22F12B71003D825D /* ObjectSelectionViewControllerTemp.swift in Sources */,
+				4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
 				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
-				9BEB4280224471110089DA32 /* VirtualObjects.swift in Sources */,
 				4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */,
 				4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */,
 				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
