@@ -114,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C09EFC8243829A20039C11A /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
+				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		4C49400022F342E9006D705F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,9 +234,8 @@
 			children = (
 				4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */,
 				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
-				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
 				4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */,
-				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
+				4C09EFC8243829A20039C11A /* Deprecated */,
 				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
 			);
 			path = "View Controllers";
