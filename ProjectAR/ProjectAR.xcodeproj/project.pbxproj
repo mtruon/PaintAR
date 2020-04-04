@@ -11,7 +11,7 @@
 		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
 		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
 		4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */; };
-		4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* ObjectViewCell.swift */; };
+		4C74495F22F12C5F003D825D /* VirtualObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* VirtualObjectCell.swift */; };
 		4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB477225922D800E85751 /* SelectionModalViewController.swift */; };
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
 		4CC1434C2251AC7B003DDCF7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */; };
@@ -59,7 +59,7 @@
 		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
 		4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectController.swift; sourceTree = "<group>"; };
-		4C74495E22F12C5F003D825D /* ObjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewCell.swift; sourceTree = "<group>"; };
+		4C74495E22F12C5F003D825D /* VirtualObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCell.swift; sourceTree = "<group>"; };
 		4C8CB477225922D800E85751 /* SelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModalViewController.swift; sourceTree = "<group>"; };
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -135,13 +135,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4C74496022F12D37003D825D /* Cell */ = {
+		4C74496022F12D37003D825D /* Cells and Supplementary Views */ = {
 			isa = PBXGroup;
 			children = (
-				4C74495E22F12C5F003D825D /* ObjectViewCell.swift */,
+				4C74495E22F12C5F003D825D /* VirtualObjectCell.swift */,
 				4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */,
 			);
-			path = Cell;
+			path = "Cells and Supplementary Views";
 			sourceTree = "<group>";
 		};
 		4CF7AB3E22394E4B002029BF /* Virtual Objects */ = {
@@ -188,7 +188,7 @@
 		9B8A60A72208AFCA003D017B /* ProjectAR */ = {
 			isa = PBXGroup;
 			children = (
-				4C74496022F12D37003D825D /* Cell */,
+				4C74496022F12D37003D825D /* Cells and Supplementary Views */,
 				9B8A60A82208AFCB003D017B /* AppDelegate.swift */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
 				4C8CB477225922D800E85751 /* SelectionModalViewController.swift */,
@@ -382,7 +382,7 @@
 				4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
 				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
-				4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */,
+				4C74495F22F12C5F003D825D /* VirtualObjectCell.swift in Sources */,
 				4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */,
 				4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */,
 				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
