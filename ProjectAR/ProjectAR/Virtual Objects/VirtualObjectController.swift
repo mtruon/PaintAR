@@ -17,15 +17,12 @@ class VirtualObjectController {
         object.load()
         
         // Attaches the painted image onto the paintedImage plane
-        guard let paintingNode = object.childNode(withName: "PaintedImage", recursively: true) else {
-            return
-        }
+        guard let paintingNode = object.childNode(withName: "PaintedImage", recursively: true) else { return }
         paintingNode.geometry?.firstMaterial?.diffuse.contents = object.paintedImage
     }
     
     func removeVirtualObject(at index: Int) {
         guard loadedObjects.indices.contains(index) else { return }
-        
         loadedObjects[index].removeFromParentNode()
         loadedObjects.remove(at: index)
     }
