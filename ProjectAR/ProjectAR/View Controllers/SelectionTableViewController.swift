@@ -1,4 +1,5 @@
 //
+//  TODO: To be removed from code base
 //  SelectionTableViewController.swift
 //  ProjectAR
 //
@@ -33,12 +34,12 @@ class SelectionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        if let virtualObjectCell = virtualObject(rawValue: indexPath.row) {
+        if let virtualObjectCell = VirtualObjectType(rawValue: indexPath.row) {
             switch virtualObjectCell {
-            case .oilPainting:
+            case .painting:
                 cell.textLabel?.text = "Oil Painting"
                 cell.accessoryType = .disclosureIndicator
-            case .ledTv:
+            case .electronic:
                 cell.textLabel?.text = "LED TV"
             }
         }
@@ -53,11 +54,11 @@ class SelectionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let virtualObjectCell = virtualObject(rawValue: indexPath.row)!
+        let virtualObjectCell = VirtualObjectType(rawValue: indexPath.row)!
         selectedVirtualObject = virtualObjectsFetcher[indexPath.row]
         
         switch virtualObjectCell {
-        case .oilPainting:
+        case .painting:
             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "imageSelectionTableViewController") as? ImageSelectionTableViewController {
                 if let navigationController = navigationController {
                     navigationController.pushViewController(viewController, animated: true)

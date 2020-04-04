@@ -10,8 +10,37 @@ import Foundation
 import ARKit
 import SceneKit
 
-class VirtualObject: SCNReferenceNode {
+public enum VirtualObjectType: Int {
+    case painting, electronic
+}
+
+struct VirtualObject: Hashable {
+    let name: String
+//    let node: VirtualObjectNode
+    let identifier = UUID()
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
     
+}
+
+struct VirtualObjectCollection: Hashable {
+    let title: String
+    let type: VirtualObjectType
+    let virtualObjects: [VirtualObject]
+    
+    let identifier = UUID()
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+}
+
+public let virtualObjectsFetcher = [
+    "models.scnassets/Painting/painting.scn", "art.scnassets/ledtv.scn"
+]
+
+
+public class VirtualObjectNode: SCNReferenceNode {
     let paintedImage: UIImage
     
     init?(using image: UIImage, url: URL) {
@@ -24,10 +53,10 @@ class VirtualObject: SCNReferenceNode {
     }
 }
 
-extension VirtualObject {
+extension VirtualObjectNode {
     /// Returns a `VirtualObject` if one exists as an ancestor to the provided node.
-    static func existingObjectContainingNode(_ node: SCNNode) -> VirtualObject? {
-        if let virtualObjectRoot = node as? VirtualObject {
+    static func existingObjectContainingNode(_ node: SCNNode) -> VirtualObjectNode? {
+        if let virtualObjectRoot = node as? VirtualObjectNode {
             return virtualObjectRoot
         }
         

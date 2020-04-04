@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */; };
+		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
+		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
+		4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* ObjectViewCell.swift */; };
 		4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB477225922D800E85751 /* SelectionModalViewController.swift */; };
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
 		4CC1434C2251AC7B003DDCF7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */; };
@@ -17,6 +21,7 @@
 		4CFA487522A99B51002B13E6 /* DismissInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA487422A99B51002B13E6 /* DismissInteraction.swift */; };
 		4CFA487822A99BBF002B13E6 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA487722A99BBF002B13E6 /* DismissAnimator.swift */; };
 		4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */; };
+		4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA487B22AAAF7B002B13E6 /* DismissButton.swift */; };
 		4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */; };
 		9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60A82208AFCB003D017B /* AppDelegate.swift */; };
 		9B8A60AB2208AFCB003D017B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A60AA2208AFCB003D017B /* art.scnassets */; };
@@ -26,7 +31,6 @@
 		9B8A60B52208AFCC003D017B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A60B32208AFCC003D017B /* LaunchScreen.storyboard */; };
 		9B8A60C02208AFCC003D017B /* ProjectARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60BF2208AFCC003D017B /* ProjectARTests.swift */; };
 		9B8A60CB2208AFCC003D017B /* ProjectARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */; };
-		9BEB4280224471110089DA32 /* VirtualObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB427F224471110089DA32 /* VirtualObjects.swift */; };
 		9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB42812244720E0089DA32 /* PaintingImages.swift */; };
 		9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */; };
 		9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
+		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
+		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
+		4C74495E22F12C5F003D825D /* ObjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewCell.swift; sourceTree = "<group>"; };
 		4C8CB477225922D800E85751 /* SelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModalViewController.swift; sourceTree = "<group>"; };
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		4CFA487422A99B51002B13E6 /* DismissInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissInteraction.swift; sourceTree = "<group>"; };
 		4CFA487722A99BBF002B13E6 /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 		4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIViewTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		4CFA487B22AAAF7B002B13E6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		9B8A60A52208AFCA003D017B /* ProjectAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8A60A82208AFCB003D017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +84,6 @@
 		9B8A60C62208AFCC003D017B /* ProjectARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARUITests.swift; sourceTree = "<group>"; };
 		9B8A60CC2208AFCC003D017B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BEB427F224471110089DA32 /* VirtualObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjects.swift; sourceTree = "<group>"; };
 		9BEB42812244720E0089DA32 /* PaintingImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingImages.swift; sourceTree = "<group>"; };
 		9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewController.swift; sourceTree = "<group>"; };
 		9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -106,10 +114,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C49400022F342E9006D705F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C493FFE22F34046006D705F /* ObjectHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C74496022F12D37003D825D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C74495E22F12C5F003D825D /* ObjectViewCell.swift */,
+				4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4CF7AB3E22394E4B002029BF /* Virtual Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9BEB427F224471110089DA32 /* VirtualObjects.swift */,
 				9BEB42812244720E0089DA32 /* PaintingImages.swift */,
 				4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */,
 				4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */,
@@ -121,6 +145,7 @@
 		4CFA487622A99B7D002B13E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4CFA487B22AAAF7B002B13E6 /* DismissButton.swift */,
 				4CFA487422A99B51002B13E6 /* DismissInteraction.swift */,
 				4CFA487722A99BBF002B13E6 /* DismissAnimator.swift */,
 			);
@@ -150,6 +175,8 @@
 		9B8A60A72208AFCA003D017B /* ProjectAR */ = {
 			isa = PBXGroup;
 			children = (
+				4C49400022F342E9006D705F /* View */,
+				4C74496022F12D37003D825D /* Cell */,
 				9B8A60A82208AFCB003D017B /* AppDelegate.swift */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
 				4C8CB477225922D800E85751 /* SelectionModalViewController.swift */,
@@ -199,6 +226,7 @@
 				4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */,
 				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
 				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
+				4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */,
 				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
 				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
 			);
@@ -340,11 +368,15 @@
 			files = (
 				9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */,
 				9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */,
+				4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
-				9BEB4280224471110089DA32 /* VirtualObjects.swift in Sources */,
+				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
+				4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */,
 				4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */,
+				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
 				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
+				4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */,
 				4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
 				4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */,
@@ -532,11 +564,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-M";
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Mi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -552,11 +585,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XEWNU67N93;
 				INFOPLIST_FILE = ProjectAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-M";
+				PRODUCT_BUNDLE_IDENTIFIER = "school.ProjectAR-Mi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

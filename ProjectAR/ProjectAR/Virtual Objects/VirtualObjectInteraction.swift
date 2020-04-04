@@ -15,7 +15,7 @@ class VirtualObjectInteraction {
     let sceneView: ARSCNView
     
     /// Most recently interacted virtual object
-    var selectedObject: VirtualObject?
+    var selectedObject: VirtualObjectNode?
     var isSelected = false
     
     var planeAnchor: ARPlaneAnchor?
@@ -31,7 +31,7 @@ class VirtualObjectInteraction {
         
     }
     
-    func selectObject(_ object: VirtualObject) {
+    func selectObject(_ object: VirtualObjectNode) {
         selectedObject = object
         isSelected = true
     }
