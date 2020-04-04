@@ -83,7 +83,7 @@ extension ObjectSelectionViewController {
         objectSelectionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         objectSelectionCollectionView.translatesAutoresizingMaskIntoConstraints = false
         objectSelectionCollectionView.backgroundColor = .systemBackground
-//        objectSelectionCollectionView.delegate = self
+        objectSelectionCollectionView.delegate = self
         view.addSubview(objectSelectionCollectionView)
         NSLayoutConstraint.activate([
             objectSelectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -143,5 +143,13 @@ extension ObjectSelectionViewController {
             currentSnapshot.appendItems((collection.virtualObjects))
         }
         dataSource.apply(currentSnapshot, animatingDifferences: false)
+    }
+}
+
+extension ObjectSelectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPaintingImage =  paintingImagesFetcher[indexPath.row]
+        print(virtualObjectCollections[indexPath.section].virtualObjects[indexPath.row].name)
+        dismiss(animated: true, completion: nil)
     }
 }
