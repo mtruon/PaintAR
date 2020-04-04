@@ -20,7 +20,7 @@ extension ViewController {
         isRestartAvailable = false
         
         // Virtual Object Interaction
-        virtualObjectLoader.removeAllVirtualObject()
+        virtualObjectController.removeAllVirtualObject()
         virtualObjectInteraction.releaseSelectedObject()
         
         // TODO: Restart UI when implemented

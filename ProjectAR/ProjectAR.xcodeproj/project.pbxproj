@@ -10,6 +10,7 @@
 		4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */; };
 		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
 		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
+		4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */; };
 		4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* ObjectViewCell.swift */; };
 		4C8CB478225922D800E85751 /* SelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB477225922D800E85751 /* SelectionModalViewController.swift */; };
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
@@ -57,6 +58,7 @@
 		4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
 		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
+		4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectController.swift; sourceTree = "<group>"; };
 		4C74495E22F12C5F003D825D /* ObjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewCell.swift; sourceTree = "<group>"; };
 		4C8CB477225922D800E85751 /* SelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModalViewController.swift; sourceTree = "<group>"; };
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		4C09EFC8243829A20039C11A /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				4C49400022F342E9006D705F /* View */,
+				4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */,
 				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
 				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
 			);
@@ -145,7 +149,7 @@
 			children = (
 				9BEB42812244720E0089DA32 /* PaintingImages.swift */,
 				4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */,
-				4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */,
+				4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */,
 				4CF7AB3822384305002029BF /* VirtualObject.swift */,
 			);
 			path = "Virtual Objects";
@@ -184,16 +188,17 @@
 		9B8A60A72208AFCA003D017B /* ProjectAR */ = {
 			isa = PBXGroup;
 			children = (
-				4C49400022F342E9006D705F /* View */,
 				4C74496022F12D37003D825D /* Cell */,
 				9B8A60A82208AFCB003D017B /* AppDelegate.swift */,
 				9B8A60AC2208AFCB003D017B /* ViewController.swift */,
 				4C8CB477225922D800E85751 /* SelectionModalViewController.swift */,
+				4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */,
 				4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */,
 				9B8A60DF2208B4E4003D017B /* Storyboards */,
 				9BEB427E224469BD0089DA32 /* View Controllers */,
 				4CF7AB3E22394E4B002029BF /* Virtual Objects */,
 				4CFA487622A99B7D002B13E6 /* Utilities */,
+				4C09EFC8243829A20039C11A /* Deprecated */,
 				9B8A60B12208AFCC003D017B /* Assets.xcassets */,
 				9B8A60B62208AFCC003D017B /* Info.plist */,
 				9B8A60AA2208AFCB003D017B /* art.scnassets */,
@@ -234,8 +239,6 @@
 			children = (
 				4CFA487922A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift */,
 				4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */,
-				4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */,
-				4C09EFC8243829A20039C11A /* Deprecated */,
 				4CFCAD6E222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift */,
 			);
 			path = "View Controllers";
@@ -381,6 +384,7 @@
 				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
 				4C74495F22F12C5F003D825D /* ObjectViewCell.swift in Sources */,
 				4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */,
+				4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */,
 				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
 				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
