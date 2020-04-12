@@ -10,7 +10,7 @@ import UIKit
 
 class ObjectSelectionViewController: UIViewController {
     // TODO: Remove this global variable -- Need Global to store selected virtual object
-    public var selectedVirtualObject: String = virtualObjectsFetcher[0]
+    public var selectedVirtualObject: String = virtualObjectsFetcher[0]    
     
     var objectSelectionCollectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<VirtualObjectCollection, VirtualObject>! = nil

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */; };
-		4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C493FFE22F34046006D705F /* ObjectHeaderView.swift */; };
 		4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */; };
 		4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */; };
 		4C74495F22F12C5F003D825D /* VirtualObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74495E22F12C5F003D825D /* VirtualObjectCell.swift */; };
@@ -16,7 +15,6 @@
 		4CAD7D262236B45000872F27 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD7D252236B45000872F27 /* models.scnassets */; };
 		4CC1434C2251AC7B003DDCF7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */; };
 		4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3822384305002029BF /* VirtualObject.swift */; };
-		4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */; };
 		4CF7AB3D22394585002029BF /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */; };
 		4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */; };
 		4CFA487522A99B51002B13E6 /* DismissInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA487422A99B51002B13E6 /* DismissInteraction.swift */; };
@@ -56,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		4C09EFC42437CBEE0039C11A /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
-		4C493FFE22F34046006D705F /* ObjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		4C4CDBBB2436471F00571852 /* ObjectSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSelectionViewController.swift; sourceTree = "<group>"; };
 		4C72AD452438EA8800258BD0 /* VirtualObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectController.swift; sourceTree = "<group>"; };
 		4C74495E22F12C5F003D825D /* VirtualObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCell.swift; sourceTree = "<group>"; };
@@ -64,7 +61,6 @@
 		4CAD7D252236B45000872F27 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		4CC1434B2251AC7B003DDCF7 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		4CF7AB3822384305002029BF /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
-		4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
 		4CF7AB3C22394585002029BF /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		4CF7AB3F2239E7EE002029BF /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
 		4CFA487422A99B51002B13E6 /* DismissInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissInteraction.swift; sourceTree = "<group>"; };
@@ -119,20 +115,10 @@
 		4C09EFC8243829A20039C11A /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				4C49400022F342E9006D705F /* View */,
-				4CF7AB3A22394431002029BF /* VirtualObjectLoader.swift */,
 				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
 				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
 			);
 			path = Deprecated;
-			sourceTree = "<group>";
-		};
-		4C49400022F342E9006D705F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4C493FFE22F34046006D705F /* ObjectHeaderView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4C74496022F12D37003D825D /* Cells and Supplementary Views */ = {
@@ -381,7 +367,6 @@
 				9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */,
 				4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
-				4C493FFF22F34046006D705F /* ObjectHeaderView.swift in Sources */,
 				4C74495F22F12C5F003D825D /* VirtualObjectCell.swift in Sources */,
 				4CF7AB3922384305002029BF /* VirtualObject.swift in Sources */,
 				4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */,
@@ -389,7 +374,6 @@
 				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
 				4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */,
-				4CF7AB3B22394431002029BF /* VirtualObjectLoader.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
 				4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */,
 				9B8A60A92208AFCB003D017B /* AppDelegate.swift in Sources */,
