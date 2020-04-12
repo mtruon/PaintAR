@@ -31,8 +31,6 @@
 		9B8A60C02208AFCC003D017B /* ProjectARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60BF2208AFCC003D017B /* ProjectARTests.swift */; };
 		9B8A60CB2208AFCC003D017B /* ProjectARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */; };
 		9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB42812244720E0089DA32 /* PaintingImages.swift */; };
-		9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */; };
-		9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +81,6 @@
 		9B8A60CA2208AFCC003D017B /* ProjectARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARUITests.swift; sourceTree = "<group>"; };
 		9B8A60CC2208AFCC003D017B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BEB42812244720E0089DA32 /* PaintingImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingImages.swift; sourceTree = "<group>"; };
-		9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewController.swift; sourceTree = "<group>"; };
-		9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,15 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C09EFC8243829A20039C11A /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				9BEB428522448FF90089DA32 /* SelectionTableViewController.swift */,
-				9BEB4287224493680089DA32 /* ImageSelectionTableViewController.swift */,
-			);
-			path = Deprecated;
-			sourceTree = "<group>";
-		};
 		4C74496022F12D37003D825D /* Cells and Supplementary Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +171,6 @@
 				9BEB427E224469BD0089DA32 /* View Controllers */,
 				4CF7AB3E22394E4B002029BF /* Virtual Objects */,
 				4CFA487622A99B7D002B13E6 /* Utilities */,
-				4C09EFC8243829A20039C11A /* Deprecated */,
 				9B8A60B12208AFCC003D017B /* Assets.xcassets */,
 				9B8A60B62208AFCC003D017B /* Info.plist */,
 				9B8A60AA2208AFCB003D017B /* art.scnassets */,
@@ -364,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BEB42822244720E0089DA32 /* PaintingImages.swift in Sources */,
-				9BEB4288224493680089DA32 /* ImageSelectionTableViewController.swift in Sources */,
 				4C09EFC52437CBEE0039C11A /* TitleSupplementaryView.swift in Sources */,
 				4CFA487A22A99C6E002B13E6 /* ViewController+UIViewTransitioningDelegate.swift in Sources */,
 				4C74495F22F12C5F003D825D /* VirtualObjectCell.swift in Sources */,
@@ -372,7 +357,6 @@
 				4C72AD462438EA8800258BD0 /* VirtualObjectController.swift in Sources */,
 				4CFA487C22AAAF7B002B13E6 /* DismissButton.swift in Sources */,
 				4CFCAD6F222B84C3000955A0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
-				9BEB428622448FF90089DA32 /* SelectionTableViewController.swift in Sources */,
 				4C4CDBBC2436471F00571852 /* ObjectSelectionViewController.swift in Sources */,
 				9B8A60AD2208AFCB003D017B /* ViewController.swift in Sources */,
 				4CF7AB402239E7EE002029BF /* ViewController+Actions.swift in Sources */,
