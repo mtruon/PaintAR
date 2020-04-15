@@ -12,7 +12,13 @@ import UIKit
 public var selectedVirtualObject: String = virtualObjectsFetcher[0]
 public var selectedPaintingImage: String = paintingImagesFetcher[0]
 
+protocol ObjectSelectionCollectionViewControllerDelegate: class {
+    func didSelectObject(at indexPath: IndexPath)
+}
+
 class ObjectSelectionViewController: UIViewController {
+    
+    weak var delegate: ObjectSelectionCollectionViewControllerDelegate?
     
     var objectSelectionCollectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<VirtualObjectCollection, VirtualObject>! = nil
@@ -153,9 +159,7 @@ extension ObjectSelectionViewController {
 
 extension ObjectSelectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        selectedPaintingImage =  paintingImagesFetcher[indexPath.row]
-        print(virtualObjectCollections[indexPath.section].virtualObjects[indexPath.row].name)
+        delegate?.didSelectObject(at: indexPath)
         dismiss(animated: true, completion: nil)
     }
 }

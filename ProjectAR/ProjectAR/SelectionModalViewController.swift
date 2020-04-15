@@ -8,11 +8,16 @@
 
 import UIKit
 
+// Daisy chain
+protocol SelectionModalViewControllerDelegate: class {
+    func didSelectObject(at indexPath: IndexPath)
+}
 
 class SelectionModalViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     
+    weak var delegate: SelectionModalViewControllerDelegate?
     var dismissInteraction: DismissInteraction?
     
     override func viewDidLoad() {
@@ -21,6 +26,14 @@ class SelectionModalViewController: UIViewController {
         // Setting up the styling and gesture of selection modal container view controller
         containerView.layer.applyRoundCornerMaskWith(radius: 20, corners: [.topRight, .topLeft])
         addPanGesture(in: containerView)
+        
+        // TODO: Stub delegates represent a daisy chain to pass information down to the root
+        //       view controller -- Flatten hierarchy
+        if let childNavController = children[0] as? UINavigationController {
+            if let childViewController = childNavController.topViewController as? ObjectSelectionViewController {
+                childViewController.delegate = self
+            }
+        }
     }
     
     func addPanGesture(in view: UIView) {
@@ -63,5 +76,11 @@ class SelectionModalViewController: UIViewController {
             break
         }
         
+    }
+}
+
+extension SelectionModalViewController: ObjectSelectionCollectionViewControllerDelegate {
+    func didSelectObject(at indexPath: IndexPath) {
+        delegate?.didSelectObject(at: indexPath)
     }
 }

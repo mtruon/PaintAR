@@ -161,6 +161,7 @@ class ViewController: UIViewController {
             if let destinationViewController = segue.destination as? SelectionModalViewController {
                 destinationViewController.transitioningDelegate = self
                 destinationViewController.dismissInteraction = dismissInteraction
+                destinationViewController.delegate = self
             }
         }
     }
@@ -176,4 +177,11 @@ extension ARSCNView {
 //            return VirtualObject.existingObjectContainingNode(result.node)
 //            }.first
 //    }
+}
+
+extension ViewController: SelectionModalViewControllerDelegate {
+    func didSelectObject(at indexPath: IndexPath) {
+        print(indexPath)
+        selectedPaintingImage =  paintingImagesFetcher[indexPath.row]
+    }
 }
