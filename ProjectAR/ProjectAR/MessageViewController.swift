@@ -35,6 +35,7 @@ class MessageViewController: UIViewController {
         messageView.layer.applyRoundCornerMaskWith(radius: messageView.frame.height/2, corners: [.topRight, .topLeft, .bottomRight])
     }
     
+    // - MARK: Public API
     func clearScheduledMessage() {
         messageHideTimer?.invalidate()
         messageHideTimer = Timer()
@@ -68,6 +69,7 @@ class MessageViewController: UIViewController {
         }
     }
     
+    // - MARK: Private Functions
     private func displayMessage(_ message: String, forDuration seconds: TimeInterval) {
         self.displayDuration = seconds
         showMessage(message)
@@ -137,7 +139,6 @@ class MessageViewController: UIViewController {
 }
 
 extension CALayer {
-    
     func applyRoundCornerMaskWith(radius: CGFloat, corners: UIRectCorner) {
         let path:UIBezierPath = UIBezierPath(roundedRect: self.bounds,
                                              byRoundingCorners: corners,

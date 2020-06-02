@@ -181,7 +181,6 @@ extension ARSCNView {
 
 extension ViewController: SelectionModalViewControllerDelegate {
     func didSelectObject(at indexPath: IndexPath) {
-        print(indexPath)
         selectedPaintingImage =  paintingImagesFetcher[indexPath.row]
     }
 }
